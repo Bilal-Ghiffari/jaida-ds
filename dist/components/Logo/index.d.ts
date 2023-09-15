@@ -1,1 +1,3 @@
-export declare const Logo: () => import("react/jsx-runtime").JSX.Element;
+type Props = {};
+export default function Logo({}: Props): import("react/jsx-runtime").JSX.Element;
+export {};

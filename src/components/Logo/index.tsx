@@ -1,4 +1,6 @@
-export const Logo = () => {
+type Props = {};
+
+export default function Logo({}: Props) {
   return (
     <span id="Logo">
       <svg
@@ -20,4 +22,4 @@ export const Logo = () => {
       </svg>
     </span>
   );
-};
+}
