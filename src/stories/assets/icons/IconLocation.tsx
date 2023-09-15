@@ -1,4 +1,5 @@
-export default function IconHome() {
+import React from "react";
+export default function IconLocation() {
   return (
     <svg
       width="20"
@@ -7,19 +8,18 @@ export default function IconHome() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path
-        d="M15 19H5C3.89543 19 3 18.1046 3 17V8.00003L10 1.00003L17 8.00003V17C17 18.1046 16.1046 19 15 19Z"
-        fill="#51459E"
-        fill-opacity="0.2"
-        stroke="#51459E"
-        stroke-opacity="0.3"
+      <circle
+        cx="10"
+        cy="10"
+        r="9"
+        stroke="#9698AB"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
-        d="M19 10L10 1.00003L1 10"
-        stroke="#51459E"
+        d="M9.30744 7.73854L13 7.00003L12.2615 10.6926C12.1031 11.4843 11.4843 12.1032 10.6926 12.2615L7 13L7.73851 9.30747C7.89686 8.51575 8.51572 7.89689 9.30744 7.73854Z"
+        stroke="#9698AB"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"

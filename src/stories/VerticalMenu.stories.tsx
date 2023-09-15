@@ -7,10 +7,10 @@ import {
   withRouter,
 } from "storybook-addon-react-router-v6";
 import { Link } from "react-router-dom";
-import IconHome from "../icons/IconHome";
-import IconLocation from "../icons/IconLocation";
-import IconMessage from "../icons/IconMessage";
-import IconCloud from "../icons/IconCloud";
+import IconHome from "./assets/icons/IconHome";
+import IconLocation from "./assets/icons/IconLocation";
+import IconMessage from "./assets/icons/IconMessage";
+import IconCloud from "./assets/icons/IconCloud";
 
 const meta: Meta = {
   title: "Components/VerticalMenu",

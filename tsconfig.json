@@ -27,7 +27,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "src/stories/assets/icons"],
   "exclude": ["./src/stories"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
