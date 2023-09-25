@@ -108,7 +108,7 @@ export default function VerticalMenu({ lists, className, pathname }: Props) {
             >
               {list.link}
             </span>
-            <span className="flex justify-between absolute inset-0 pointer-events-none">
+            <span className="flex mr-[18px]  absolute inset-0 pointer-events-none">
               {!!list.icon && (
                 <span className="flex-none mr-[18px] ml-6 relative">
                   {list.icon}{" "}
