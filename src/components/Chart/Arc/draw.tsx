@@ -1,0 +1,91 @@
+import * as d3 from "d3";
+import { TData, TOptions } from ".";
+
+const draw = (element: d3.BaseType, data: TData[], options?: TOptions) => {
+  const boxSize = 300;
+  const halfBox = boxSize / 2;
+  const borderSize = 15;
+  const halfBorderSize = borderSize / 2;
+
+  d3.select(element).select("svg").remove();
+
+  const svg = d3
+    .select(element)
+    .append("svg")
+    .attr("preserveAspectRatio", "xMidYMid meet")
+    .attr("height", "100%")
+    .attr("width", "100%")
+    .attr("viewBox", `0 0 ${boxSize} ${boxSize}`)
+    .append("g")
+    .attr("transform", `translate(${halfBox}, ${halfBox})`);
+
+  let i = 0;
+  data.reverse();
+  for (const iterator of data) {
+    const startAngle = iterator.startAnglePercentage
+      ? Math.PI * (iterator.startAnglePercentage / 50)
+      : 0;
+    const valueInPercent = (iterator.value / iterator.maxValue) * 100;
+    const endAngle = Math.PI * (valueInPercent / 50) + startAngle;
+    const radius = i * 30;
+
+    // console.log("startAngle", startAngle);
+    // console.log("valueInPercent", valueInPercent);
+    // console.log("endAngle", endAngle);
+    // console.log("Math.PI", Math.PI);
+    svg
+      .append("circle")
+      .attr("cx", 0)
+      .attr("cy", 0)
+      .attr("r", halfBox - halfBorderSize - radius)
+      .attr("stroke", options?.backgroundArc || "#f0f0f0")
+      .attr("fill", "transparent")
+      .attr("stroke-width", borderSize);
+
+    const arcGnerator: any = d3
+      .arc()
+      .startAngle(startAngle)
+      .endAngle(endAngle)
+      .innerRadius(boxSize / 2 - borderSize - radius)
+      .outerRadius(boxSize / 2 - radius)
+      .cornerRadius(100);
+
+    const pieGenerator: any = d3.pie().value((d: any) => d.value);
+    // console.log("pieGenerator", pieGenerator([iterator]));
+    // console.log("arcGnerator", arcGnerator());
+    const arcs = svg
+      .selectAll()
+      .data(pieGenerator([iterator]))
+      .enter();
+
+    arcs
+      .append("path")
+      .attr("d", arcGnerator)
+      .style("fill", (d: any) => d.data.color);
+
+    svg
+      .append("text")
+      .attr("id", `label-${iterator.key}`)
+      .attr("font-weight", "bold")
+      .attr("font-size", "3rem")
+      .attr("opacity", 0)
+      .attr("class", "transform translate-y-4 fill-primary")
+      .attr("text-anchor", "middle")
+      .text(`${Math.ceil(valueInPercent)}%`);
+
+    i++;
+  }
+
+  d3.selectAll("path").on("mouseover", (event: any) => {
+    d3.selectAll("text").attr("opacity", 0);
+    console.log("mouseHover", event);
+    const current: any = data.find(
+      (d) => d.key === event.target.__data__.data.key
+    );
+    if (current) {
+      svg.select(`text#label-${current.key}`).attr("opacity", 100);
+    }
+  });
+};
+
+export default draw;

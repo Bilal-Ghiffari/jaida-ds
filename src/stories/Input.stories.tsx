@@ -1,4 +1,5 @@
 import React from "react";
+import "./assets/index.css";
 import type { Meta, StoryObj } from "@storybook/react";
 import Input from "../components/Input";
 import { MagnifyingGlass, SlidersHorizontal } from "@phosphor-icons/react";
