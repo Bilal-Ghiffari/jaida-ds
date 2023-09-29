@@ -110,7 +110,7 @@ export default function VerticalMenu({ lists, className, pathname }: Props) {
             </span>
             <span className="flex mr-[18px]  absolute inset-0 pointer-events-none">
               {!!list.icon && (
-                <span className="flex-none mr-[18px] ml-6 relative">
+                <span className="flex-none mr-auto ml-6 relative">
                   {list.icon}{" "}
                   {!!list.hasNotification && (
                     <span className="w-[6px] h-[6px] rounded-full bg-[#46D39A] absolute bottom-[5px] right-0"></span>

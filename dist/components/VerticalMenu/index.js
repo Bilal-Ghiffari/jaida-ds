@@ -21,6 +21,6 @@ export default function VerticalMenu({ lists, className, pathname }) {
             return (_jsxs("li", { className: "relative pl-7", children: [isActive && _jsx(ActiveIndicators, {}), _jsx("span", { className: [
                             "text-sm ml-7",
                             isActive ? "font-bold text-primary" : "text-secondary",
-                        ].join(" "), children: list.link }), _jsxs("span", { className: "flex mr-[18px]  absolute inset-0 pointer-events-none", children: [!!list.icon && (_jsxs("span", { className: "flex-none mr-[18px] ml-6 relative", children: [list.icon, " ", !!list.hasNotification && (_jsx("span", { className: "w-[6px] h-[6px] rounded-full bg-[#46D39A] absolute bottom-[5px] right-0" }))] })), !!list.badge && (_jsx(Badge, { label: list.badge.label, state: list.badge.state }))] }), !!list.child && list.child.length > 0 && (_jsx(VerticalMenu, { pathname: pathname, lists: list.child }))] }, list.id));
+                        ].join(" "), children: list.link }), _jsxs("span", { className: "flex mr-[18px]  absolute inset-0 pointer-events-none", children: [!!list.icon && (_jsxs("span", { className: "flex-none mr-auto ml-6 relative", children: [list.icon, " ", !!list.hasNotification && (_jsx("span", { className: "w-[6px] h-[6px] rounded-full bg-[#46D39A] absolute bottom-[5px] right-0" }))] })), !!list.badge && (_jsx(Badge, { label: list.badge.label, state: list.badge.state }))] }), !!list.child && list.child.length > 0 && (_jsx(VerticalMenu, { pathname: pathname, lists: list.child }))] }, list.id));
         }) }));
 }
