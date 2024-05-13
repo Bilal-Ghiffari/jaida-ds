@@ -15,7 +15,7 @@ export const StacktStory: Story = {
   render: () => (
     <div className="w-full">
       <Stack
-        options={{ background: "#F2F0FF" }}
+        options={{ background: "#F2F0FF", height: 150 }}
         data={[
           {
             legend: "level",
@@ -78,15 +78,15 @@ export const StacktStory: Story = {
             type: "line",
             values: [
               {
-                value: 30,
+                value: 50,
                 label: "01",
               },
               {
-                value: 20,
+                value: 60,
                 label: "02",
               },
               {
-                value: 10,
+                value: 40,
                 label: "03",
               },
               {
@@ -102,27 +102,27 @@ export const StacktStory: Story = {
                 label: "06",
               },
               {
-                value: 55,
+                value: 65,
                 label: "07",
               },
               {
-                value: 40,
+                value: 57,
                 label: "08",
               },
               {
-                value: 35,
+                value: 50,
                 label: "09",
               },
               {
-                value: 18,
+                value: 70,
                 label: "10",
               },
               {
-                value: 65,
+                value: 75,
                 label: "11",
               },
               {
-                value: 45,
+                value: 80,
                 label: "12",
               },
             ],

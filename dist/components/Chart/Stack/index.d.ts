@@ -13,10 +13,12 @@ export type TData = {
 });
 export type TOptions = {
     background?: string;
+    height?: number;
+    widht?: number;
 };
 type Props = {
     data: TData[];
-    options?: TOptions;
+    options: TOptions;
 };
-export default function Stack({ data }: Props): import("react/jsx-runtime").JSX.Element;
+export default function Stack({ data, options }: Props): import("react/jsx-runtime").JSX.Element;
 export {};

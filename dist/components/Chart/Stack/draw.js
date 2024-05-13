@@ -1,8 +1,9 @@
 import * as d3 from "d3";
-const draw = (element, data) => {
+const draw = (element, data, options) => {
     const marginTop = 30;
     const marginBottom = 30;
-    const boxSize = 300;
+    const width = options.widht || 300;
+    const height = options.height || 300;
     d3.select(element).select("svg").remove();
     const svg = d3
         .select(element)
@@ -10,7 +11,7 @@ const draw = (element, data) => {
         .attr("preserveAspectRatio", "xMidYMid meet")
         .attr("height", "100%")
         .attr("width", "100%")
-        .attr("viewBox", `0 0 ${boxSize} ${boxSize}`)
+        .attr("viewBox", `0 0 ${width} ${height}`)
         .append("g");
     // .attr("transform", `translate(${halfBox}, ${halfBox})`);
     let axisCreated = false;
@@ -25,12 +26,12 @@ const draw = (element, data) => {
         const x = d3
             .scaleBand()
             .domain(chart.values.map((d) => d.label))
-            .range([0, boxSize])
+            .range([0, width])
             .padding(0.5);
         const y = d3
             .scaleLinear()
             .domain([0, max])
-            .range([boxSize - marginBottom, marginTop]);
+            .range([height - marginBottom, marginTop]);
         if (!axisCreated) {
             // y axis
             svg
@@ -42,14 +43,14 @@ const draw = (element, data) => {
                 .call((g) => g
                 .selectAll(".tick line")
                 .attr("x1", 0)
-                .attr("x2", boxSize - 30)
+                .attr("x2", width - 30)
                 .attr("stroke-width", 0.5)
                 .attr("stroke-opacity", 0.1)
                 .call((g) => g.selectAll("g.tick:first-child line").remove()));
             // x axis
             svg
                 .append("g")
-                .attr("transform", `translate(0, ${boxSize - (marginBottom - 10)})`)
+                .attr("transform", `translate(0, ${height - (marginBottom - 10)})`)
                 .call(d3.axisBottom(x).tickSize(0))
                 .call((g) => g.selectAll("g.tick text"))
                 .attr("fill", "#9698AB")

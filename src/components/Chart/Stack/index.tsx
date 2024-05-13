@@ -14,18 +14,20 @@ export type TData = {
 
 export type TOptions = {
   background?: string;
+  height?: number;
+  widht?: number;
 };
 
 type Props = {
   data: TData[];
-  options?: TOptions;
+  options: TOptions;
 };
 
-export default function Stack({ data }: Props) {
+export default function Stack({ data, options }: Props) {
   const ref = useRef(null);
   useEffect(() => {
     if (ref.current) {
-      draw(ref.current, data);
+      draw(ref.current, data, options);
     }
   }, [ref]);
 
