@@ -71,6 +71,7 @@ const draw = (element, data, options) => {
         if (current) {
             svg.select(`text#label-${current.key}`).attr("opacity", 100);
         }
+        // d3.selectAll("circle").attr()
     });
 };
 export default draw;

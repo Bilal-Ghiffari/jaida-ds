@@ -85,6 +85,7 @@ const draw = (element: d3.BaseType, data: TData[], options?: TOptions) => {
     if (current) {
       svg.select(`text#label-${current.key}`).attr("opacity", 100);
     }
+    // d3.selectAll("circle").attr()
   });
 };
 
