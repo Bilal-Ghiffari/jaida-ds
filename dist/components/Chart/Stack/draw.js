@@ -48,13 +48,14 @@ const draw = (element, data, options) => {
                 .attr("stroke-opacity", 0.1)
                 .call((g) => g.selectAll("g.tick:first-child line").remove()));
             // x axis
-            svg
-                .append("g")
-                .attr("transform", `translate(0, ${height - (marginBottom - 10)})`)
-                .call(d3.axisBottom(x).tickSize(0))
-                .call((g) => g.selectAll("g.tick text"))
-                .attr("fill", "#9698AB")
-                .call((g) => g.select("g path.domain").remove());
+            if (options.xAxies?.display)
+                svg
+                    .append("g")
+                    .attr("transform", `translate(0, ${height - (marginBottom - 10)})`)
+                    .call(d3.axisBottom(x).tickSize(0))
+                    .call((g) => g.selectAll("g.tick text"))
+                    .attr("fill", "#9698AB")
+                    .call((g) => g.select("g path.domain").remove());
             axisCreated = true;
         }
         if (chart.type === "bar") {

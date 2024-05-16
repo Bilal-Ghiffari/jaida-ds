@@ -15,7 +15,11 @@ export const StacktStory: Story = {
   render: () => (
     <div className="w-full">
       <Stack
-        options={{ background: "#F2F0FF", height: 150 }}
+        options={{
+          background: "#F2F0FF",
+          height: 150,
+          xAxies: { display: true },
+        }}
         data={[
           {
             legend: "level",

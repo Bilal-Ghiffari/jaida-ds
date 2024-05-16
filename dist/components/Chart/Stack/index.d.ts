@@ -15,6 +15,9 @@ export type TOptions = {
     background?: string;
     height?: number;
     widht?: number;
+    xAxies?: {
+        display: boolean;
+    };
 };
 type Props = {
     data: TData[];

@@ -59,13 +59,14 @@ const draw = (element: d3.BaseType, data: TData[], options: TOptions) => {
         );
 
       // x axis
-      svg
-        .append("g")
-        .attr("transform", `translate(0, ${height - (marginBottom - 10)})`)
-        .call(d3.axisBottom(x).tickSize(0))
-        .call((g) => g.selectAll("g.tick text"))
-        .attr("fill", "#9698AB")
-        .call((g) => g.select("g path.domain").remove());
+      if (options.xAxies?.display)
+        svg
+          .append("g")
+          .attr("transform", `translate(0, ${height - (marginBottom - 10)})`)
+          .call(d3.axisBottom(x).tickSize(0))
+          .call((g) => g.selectAll("g.tick text"))
+          .attr("fill", "#9698AB")
+          .call((g) => g.select("g path.domain").remove());
 
       axisCreated = true;
     }
