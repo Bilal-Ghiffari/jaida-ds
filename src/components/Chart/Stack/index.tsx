@@ -32,7 +32,7 @@ export default function Stack({ data, options }: Props) {
     if (ref.current) {
       draw(ref.current, data, options);
     }
-  }, [ref]);
+  }, [ref, data, options]);
 
   return <div ref={ref} />;
 }

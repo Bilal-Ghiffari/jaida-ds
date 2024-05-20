@@ -7,6 +7,6 @@ export default function Arc({ data, options }) {
         if (ref.current) {
             draw(ref.current, data, options);
         }
-    }, [ref]);
+    }, [ref, data, options]);
     return _jsx("div", { ref: ref });
 }
