@@ -27,7 +27,6 @@ const draw = (element: d3.BaseType, data: TData[], options: TOptions) => {
       return acc;
     }, [])
   );
-
   for (const chart of data) {
     const x: any = d3
       .scaleBand()
@@ -65,7 +64,8 @@ const draw = (element: d3.BaseType, data: TData[], options: TOptions) => {
           .attr("transform", `translate(0, ${height - (marginBottom - 10)})`)
           .call(d3.axisBottom(x).tickSize(0))
           .call((g) => g.selectAll("g.tick text"))
-          .attr("fill", "#9698AB")
+          .attr("color", "#9698AB")
+          .attr("font-size", 6)
           .call((g) => g.select("g path.domain").remove());
 
       axisCreated = true;
@@ -91,7 +91,7 @@ const draw = (element: d3.BaseType, data: TData[], options: TOptions) => {
       // create chart line
       const line: any = d3
         .line()
-        .x((d: any) => x(d.label))
+        .x((d: any) => x(d.label as string))
         .y((d: any) => y(d.value))
         .curve(d3.curveCatmullRom.alpha(0.5));
       svg

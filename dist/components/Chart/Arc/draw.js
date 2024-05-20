@@ -23,10 +23,6 @@ const draw = (element, data, options) => {
         const valueInPercent = (iterator.value / iterator.maxValue) * 100;
         const endAngle = Math.PI * (valueInPercent / 50) + startAngle;
         const radius = i * 30;
-        // console.log("startAngle", startAngle);
-        // console.log("valueInPercent", valueInPercent);
-        // console.log("endAngle", endAngle);
-        // console.log("Math.PI", Math.PI);
         svg
             .append("circle")
             .attr("cx", 0)
@@ -43,8 +39,6 @@ const draw = (element, data, options) => {
             .outerRadius(boxSize / 2 - radius)
             .cornerRadius(100);
         const pieGenerator = d3.pie().value((d) => d.value);
-        // console.log("pieGenerator", pieGenerator([iterator]));
-        // console.log("arcGnerator", arcGnerator());
         const arcs = svg
             .selectAll()
             .data(pieGenerator([iterator]))

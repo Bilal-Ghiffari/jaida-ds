@@ -29,10 +29,6 @@ const draw = (element: d3.BaseType, data: TData[], options?: TOptions) => {
     const endAngle = Math.PI * (valueInPercent / 50) + startAngle;
     const radius = i * 30;
 
-    // console.log("startAngle", startAngle);
-    // console.log("valueInPercent", valueInPercent);
-    // console.log("endAngle", endAngle);
-    // console.log("Math.PI", Math.PI);
     svg
       .append("circle")
       .attr("cx", 0)
@@ -51,8 +47,6 @@ const draw = (element: d3.BaseType, data: TData[], options?: TOptions) => {
       .cornerRadius(100);
 
     const pieGenerator: any = d3.pie().value((d: any) => d.value);
-    // console.log("pieGenerator", pieGenerator([iterator]));
-    // console.log("arcGnerator", arcGnerator());
     const arcs = svg
       .selectAll()
       .data(pieGenerator([iterator]))

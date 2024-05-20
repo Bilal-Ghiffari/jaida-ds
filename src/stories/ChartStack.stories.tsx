@@ -28,51 +28,51 @@ export const StacktStory: Story = {
             values: [
               {
                 value: 40,
-                label: "01",
+                label: "Jan",
               },
               {
                 value: 38,
-                label: "02",
+                label: "Feb",
+              },
+              {
+                value: 38,
+                label: "Mar",
               },
               {
                 value: 15,
-                label: "03",
+                label: "Apr",
               },
               {
                 value: 35,
-                label: "04",
+                label: "May",
               },
               {
                 value: 20,
-                label: "05",
+                label: "Jun",
               },
               {
                 value: 55,
-                label: "06",
+                label: "Jul",
               },
               {
                 value: 10,
-                label: "07",
+                label: "Aug",
               },
               {
                 value: 40,
-                label: "08",
+                label: "Sep",
               },
               {
                 value: 20,
-                label: "09",
+                label: "Okt",
               },
               {
                 value: 18,
-                label: "10",
+                label: "Nov",
               },
               {
                 value: 50,
-                label: "11",
-              },
-              {
-                value: 38,
-                label: "12",
+                label: "Des",
               },
             ],
           },
@@ -83,51 +83,51 @@ export const StacktStory: Story = {
             values: [
               {
                 value: 50,
-                label: "01",
+                label: "Jan",
               },
               {
                 value: 60,
-                label: "02",
+                label: "Feb",
               },
               {
                 value: 40,
-                label: "03",
+                label: "Mar",
               },
               {
                 value: 60,
-                label: "04",
+                label: "Apr",
               },
               {
                 value: 65,
-                label: "05",
+                label: "May",
               },
               {
                 value: 70,
-                label: "06",
+                label: "Jun",
               },
               {
                 value: 65,
-                label: "07",
+                label: "Jul",
               },
               {
                 value: 57,
-                label: "08",
+                label: "Aug",
               },
               {
                 value: 50,
-                label: "09",
+                label: "Sep",
               },
               {
                 value: 70,
-                label: "10",
+                label: "Okt",
               },
               {
                 value: 75,
-                label: "11",
+                label: "Nov",
               },
               {
                 value: 80,
-                label: "12",
+                label: "Des",
               },
             ],
           },

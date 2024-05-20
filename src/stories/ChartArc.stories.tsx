@@ -19,12 +19,12 @@ export const ArctStory: Story = {
         data={[
           {
             key: "level",
-            value: 1500,
+            value: 1700,
             maxValue: 2000,
             startAnglePercentage: 25,
             color: "#B4E8F4",
           },
-          { key: "spent", value: 750, maxValue: 1500, color: "#F98968" },
+          { key: "spent", value: 1400, maxValue: 1500, color: "#F98968" },
           { key: "revenue", value: 1600, maxValue: 2000, color: "#51459E" },
         ]}
       />
