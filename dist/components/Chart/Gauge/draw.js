@@ -70,8 +70,7 @@ const draw = (element, data, options) => {
         .attr("r", (halfBox - radius) * 0.67)
         .attr("stroke", "#ffffff")
         .attr("stroke-width", "4")
-        .attr("fill", "#84E8F4")
-        .attr("fill-opacity", "20%")
+        .attr("fill", "#bae4e9")
         .attr("filter", "drop-shadow(0px 1px 1px rgb(0 0 0 / 0.1))");
     svg
         .append("g")
